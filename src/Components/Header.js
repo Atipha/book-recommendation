@@ -1,16 +1,16 @@
-import React from "react"
+import React from "react";
+import './Header.css';
 
 class Header extends React.Component {
     render() {
-        const title = "Book Recommender"
+        const title = "Book Recommender System";
         return(
             <div>
                 <h1>{title}</h1>
-                <h2>Which book should you read next?</h2>
             </div>
         )
     }
     
 }
 
-export default Header
+export default Header;

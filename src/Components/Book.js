@@ -1,7 +1,7 @@
 import React from 'react';
 import config from '../config';
 
-import './Book.css'
+import './Book.css';
 
 class Book extends React.Component {
     constructor(props) {
@@ -64,7 +64,7 @@ class Book extends React.Component {
     render() {
       let { error, isLoaded, items, rank, rank1, rank2, rank3 } = this.state;
       if (error || !items[rank1] || !items[rank] || !items[rank2] || !items[rank3]) {
-        return <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+        return <button className="" onClick={this.handleGetRandomRank}>Best Sellers</button>
 
       } 
       else if (!isLoaded) {
@@ -72,42 +72,42 @@ class Book extends React.Component {
       }
       //if user is first landing on the page, only display button 
       else if (!rank) {
-        return <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+        return <button className="" onClick={this.handleGetRandomRank}>Best Sellers</button>
       }
       else {
         return (
           <div className="content">
             <div>
-              <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+              <button className="" onClick={this.handleGetRandomRank}>Best Sellers</button>
             </div>
-            <div className="bookCoverStyling">
+            <div className="book">
               <img src={items[rank].book_image} alt="Book cover"/>
+              <h3>{items[rank].title}</h3>
+              <h4>Author: {items[rank].author}</h4>
+              <h5>{items[rank].description}</h5>
+              <a href={items[rank].amazon_product_url}>Amazon URL</a>
+            </div>
+            <div className="book1">
               <img src={items[rank1].book_image} alt="Book cover"/>
-              <img src={items[rank2].book_image} alt="Book cover"/>
-              <img src={items[rank3].book_image} alt="Book cover"/>
-            </div>
-            <div className="titleStyling">
-              <p><h5>{items[rank].title}</h5>
-              <h5>{items[rank1].title}</h5>
-              <h5>{items[rank2].title}</h5>
-              <h5>{items[rank3].title}</h5></p><br></br>
-            </div>
-            <div className="authorStyling">
-              <p><h5>by: {items[rank].author}</h5>
-              <h5>by: {items[rank1].author}</h5>
-              <h5>by: {items[rank2].author}</h5>
-              <h5>by: {items[rank3].author}</h5></p><br></br>
-            </div>
-            <div className="descriptionStyling">
-              <p><h5>{items[rank].description}</h5>
+              <h3>{items[rank1].title}</h3>
+              <h4>Author: {items[rank1].author}</h4>
               <h5>{items[rank1].description}</h5>
-              <h5>{items[rank2].description}</h5>
-              <h5>{items[rank3].description}</h5></p><br></br>
+              <a href={items[rank1].amazon_product_url}>Amazon URL</a> 
             </div>
-            <a href={items[rank].amazon_product_url}>Amazon URL</a>
-            <a href={items[rank1].amazon_product_url}>Amazon URL</a> 
-            <a href={items[rank2].amazon_product_url}>Amazon URL</a> 
-            <a href={items[rank3].amazon_product_url}>Amazon URL</a> 
+            <div className="book2">
+              <img src={items[rank2].book_image} alt="Book cover"/>
+              <h3>{items[rank2].title}</h3>
+              <h4>Author: {items[rank2].author}</h4>
+              <h5>{items[rank2].description}</h5>
+              <a href={items[rank2].amazon_product_url}>Amazon URL</a> 
+            </div>
+            <div className="book3">
+              <img src={items[rank3].book_image} alt="Book cover"/>
+              <h3>{items[rank3].title}</h3>
+              <h4>Author: {items[rank3].author}</h4>
+              <h5>{items[rank3].description}</h5>
+              <a href={items[rank3].amazon_product_url}>Amazon URL</a> 
+            </div>
           </div>
         );
       }
@@ -115,4 +115,4 @@ class Book extends React.Component {
 
 }
 
-export default Book
+export default Book;
