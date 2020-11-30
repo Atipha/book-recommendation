@@ -1,4 +1,4 @@
 var config = {
-    MY_KEY : 'ur_api_key'
+    MY_KEY : 'IU4I87SmGOTEBZhsht9xdPbVVRdRRJX4'
 }
-export default config
+export default config;
